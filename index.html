@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Wiki diseño: plataforma educativa de Diseño Digital UVM.">
+  <title>Wiki diseño | Inicio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <style>
+    .contenido-wiki { max-width: 800px; margin: 0 auto; font-family: 'Open Sans', sans-serif; }
+    .subtitulo-wiki { font-family: 'Montserrat', sans-serif; color: var(--c-primario); margin-top: 2rem; margin-bottom: 1rem; border-bottom: 2px solid var(--c-secundario); padding-bottom: 0.5rem; }
+    .lista-conceptos { list-style: none; padding: 0; }
+    .lista-conceptos li { margin-bottom: 1rem; padding-left: 1.5rem; position: relative; }
+    .lista-conceptos li::before { content: "•"; color: var(--c-primario); font-weight: bold; font-size: 1.5rem; position: absolute; left: 0; top: -0.3rem; }
+    .tabla-comparativa { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.95rem; }
+    .tabla-comparativa th { background-color: var(--c-primario); color: white; padding: 10px; text-align: left; font-family: 'Montserrat', sans-serif; }
+    .tabla-comparativa td { padding: 10px; border-bottom: 1px solid var(--c-secundario); }
+    .tabla-comparativa tr:nth-child(even) { background-color: var(--c-fondo); }
+    .bloque-ejemplo { background-color: var(--c-fondo); border-left: 4px solid var(--c-primario); padding: 1rem; margin: 1.5rem 0; border-radius: 0 8px 8px 0; font-style: italic; }
+    .contenedor-video-recompensa { margin-top: 2rem; background: var(--c-blanco); border: 1px dashed var(--c-primario); padding: 1.5rem; border-radius: 8px; text-align: center; }
+    /* Ajustes para iframes responsivos de YouTube */
+    .video-wiki { width: 100%; max-width: 640px; aspect-ratio: 16/9; border-radius: 6px; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); margin-top: 1rem; border: none; }
+    .fases-timeline { display: flex; flex-direction: column; gap: 1.5rem; margin-top: 1.5rem; }
+    .fase-card { background: white; border: 1px solid var(--c-secundario); padding: 1.2rem; border-radius: 8px; box-shadow: 0 1px 3px rgb(0 0 0 / 0.05); }
+    .fase-numero { background: var(--c-primario); color: white; padding: 2px 8px; border-radius: 4px; font-weight: bold; font-size: 0.85rem; margin-right: 0.5rem; font-family: 'Montserrat', sans-serif; }
+    
+    .btn-subir { position: fixed; bottom: 30px; right: 30px; background-color: var(--c-primario); color: var(--c-blanco); width: 50px; height: 50px; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.2); transition: 0.3s; z-index: 99; }
+    .btn-subir:hover { transform: translateY(-5px); background-color: var(--c-texto); }
+  </style>
+</head>
+<body class="theme-uvm">
+  <a class="jump-content" href="#contenido-principal">Saltar al contenido</a>
+
+  <header class="navbar-global">
+    <div class="wrapper navbar-grid">
+      <a class="logo-link" href="index.html" aria-label="Inicio">
+        <img src="assets/Recurso 1.png" alt="Logo Wiki" class="img-logo">
+        <div class="logo-text">
+          <span class="title-main">Wiki</span>
+          <span class="title-sub">diseño digital para estudiantes</span>
+        </div>
+      </a>
+
+      <form class="search-box" role="search">
+        <label class="sr-only" for="input-buscador">Buscar temas..</label>
+        <svg class="icon-search" viewBox="0 0 24 24"><path d="M10.8 18.1a7.3 7.3 0 1 1 5.2-2.1l4 4-1.6 1.6-4-4a7.2 7.2 0 0 1-3.6 1Zm0-2.3a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"/></svg>
+        <input id="input-buscador" type="search" placeholder="Buscar temas de diseño">
+      </form>
+
+      <button id="btn-mobile" class="hamburger" type="button" aria-expanded="false" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="menu-principal" class="nav-links">
+        <a class="link active" href="#hero">Inicio</a>
+        <a class="link" href="#ux">UX</a>
+        <a class="link" href="#web">Diseño Web</a>
+        <a class="link" href="#thinking">Design Thinking</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido-principal">
+    
+    <section id="hero" class="bloque-espaciado hero-fondo">
+      <div class="wrapper hero-layout">
+        
+        <div class="hero-grafico">
+          <video controls autoplay muted loop class="video-hero">
+            <source src="assets/video/Video_Header.mp4" type="video/mp4">
+            Tu navegador no soporta el formato de video.
+          </video>
+        </div>
+
+        <div class="hero-texto">
+          <span class="tag-primario">Bienvenidos</span>
+          <h1 class="titulo-display">Aprende diseño web <span class="txt-primario">sin rodeos y con lo importante </span></h1>
+          <p class="intro-p">Wiki UVM es una plataforma educativa desarrollada para estudiantes de Diseño digital y web de la UVM. Donde encontrarás conceptos, recursos y ejemplos relacionados con la experiencia de usuario, diseño web y design thinking en un solo lugar.</p>
+          <p class="intro-p">Nuestra plataforma permite consultar información de manera rápida y organizada, facilitando tu aprendizaje mediante recursos visuales, casos prácticos e información verificada.</p>
+          <div class="botones-grupo">
+            <a class="boton btn-primario" href="#temas">Explorar temas</a>
+            <a class="boton btn-linea" href="#historia">Caso de estudio</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="temas" class="bloque-espaciado">
+      <div class="wrapper">
+        <div class="cabecera-seccion">
+          <h2>Secciones principales</h2>
+          <p>Tarjetas con iconos lineales para navegar rápido dentro de la wiki educativa.</p>
+        </div>
+
+        <div class="grid-tres-columnas">
+          <a href="#ux" style="text-decoration: none; color: inherit;">
+            <article class="tarjeta-info">
+              <div class="icono-fondo">
+                <svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0-3.2 11.1v3.1h6.4v-3.1A6 6 0 0 0 12 3Zm0 2.2a3.8 3.8 0 0 1 1.8 7.1l-.8.4v2.3h-2v-2.3l-.8-.4A3.8 3.8 0 0 1 12 5.2ZM9 20h6v1.8H9V20Z"/></svg>
+              </div>
+              <div class="tarjeta-cuerpo">
+                <h3>Experiencia de usuario</h3>
+                <p>Definición, métricas fundamentales y recursos interactivos de navegación.</p>
+              </div>
+            </article>
+          </a>
+
+          <a href="#web" style="text-decoration: none; color: inherit;">
+            <article class="tarjeta-info">
+              <div class="icono-fondo">
+                <svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v10A2.5 2.5 0 0 1 17.5 18H14v1.8h3v1.7H7v-1.7h3V18H6.5A2.5 2.5 0 0 1 4 15.5v-10Zm2.5-.7a.7.7 0 0 0-.7.7v10c0 .4.3.7.7.7h11c.4 0 .7-.3.7-.7v-10a.7.7 0 0 0-.7-.7h-11Z"/></svg>
+              </div>
+              <div class="tarjeta-cuerpo">
+                <h3>Diseño web</h3>
+                <p>Principios visuales front-end, estructuras semánticas y buenas prácticas.</p>
+              </div>
+            </article>
+          </a>
+
+          <a href="#thinking" style="text-decoration: none; color: inherit;">
+            <article class="tarjeta-info">
+              <div class="icono-fondo">
+                <svg viewBox="0 0 24 24"><path d="M12 2.8a7 7 0 0 0-4.8 12.1c.5.5.8 1 .8 1.7v.7h8v-.7c0-.7.3-1.2.8-1.7A7 7 0 0 0 12 2.8Zm0 2a5 5 0 0 1 3.4 8.6 4.2 4.2 0 0 0-1.3 2.1H9.9a4.2 4.2 0 0 0-1.3-2.1A5 5 0 0 1 12 4.8Zm-3.5 14h7v1.8h-7v-1.8Z"/></svg>
+              </div>
+              <div class="tarjeta-cuerpo">
+                <h3>Design thinking</h3>
+                <p>Fases metodológicas, herramientas y prototipado ágil centrado en personas.</p>
+              </div>
+            </article>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="historia" class="bloque-espaciado fondo-secundario">
+      <div class="wrapper">
+        <div class="cabecera-seccion center-txt">
+          <span class="tag-primario">Caso de Uso UX</span>
+          <h2>Visibilidad del estado del sistema</h2>
+          <p>Un recorrido narrativo sobre cómo la falta de información afecta la experiencia y productividad de un estudiante.</p>
+        </div>
+
+        <div class="grid-tres-columnas">
+          <figure class="tarjeta-historia">
+            <img src="assets/img/Foto-principal.jpg" alt="Estudiante trabajando" class="img-historia">
+            <figcaption>
+              <p>Terminas tus clases, llegas a casa con la energía a tope para avanzar en tu proyecto final y abres la Wiki para consultar tus apuntes de diseño. Todo fluye y estás listo para maquetar.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="tarjeta-historia">
+            <img src="assets/img/Problemafoto.jpg" alt="Usuario frustrado" class="img-historia">
+            <figcaption>
+              <p>De pronto, todo se detiene. La página no carga, los menús no responden y no hay ningún mensaje que te explique qué está pasando. Esa falta de retroalimentación rompe tu concentración y es el peor enemigo de tu productividad.</p>
+            </figcaption>
+          </figure>
+
+          <figure class="tarjeta-historia">
+            <img src="assets/img/Infraestrucura.jpg" alt="Servidores de red" class="img-historia">
+            <figcaption>
+              <p>¡Respiro de alivio! El sistema vuelve a la normalidad y te muestra un indicador visual claro de que la conexión es estable. Recuperas el control de la plataforma y sigues diseñando sin más interrupciones.</p>
+            </figcaption>
+            <img src="assets/img/Listo.svg" alt="Éxito" class="icono-historia">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="ux" class="bloque-espaciado">
+      <div class="wrapper contenido-wiki">
+        <div class="cabecera-seccion">
+          <span class="tag-primario">Módulo 01</span>
+          <h2>Experiencia de Usuario (UX)</h2>
+          <p class="intro-p">Aprende cómo procesan e interactúan los usuarios con los productos digitales para diseñar interfaces intuitivas.</p>
+        </div>
+
+        <h3 class="subtitulo-wiki">¿Qué es UX?</h3>
+        <p>La <strong>Experiencia de Usuario (UX)</strong> es la forma en que una persona percibe, siente e interactúa con un sitio web o aplicación. No se enfoca solo en la estética visual, sino en los procesos lógicos y cognitivos. Su objetivo primordial es estructurar el entorno digital para que el usuario encuentre información relevante y complete tareas específicas sin confusión, frustración ni pérdida de tiempo.</p>
+
+        <h3 class="subtitulo-wiki">¿Por qué es importante?</h3>
+        <p>Una buena estrategia de UX incrementa sustancialmente la satisfacción general del usuario, reduce drásticamente los errores de operación y permite que las personas naveguen con absoluta confianza. </p>
+        <p>En el contexto de una <strong>wiki educativa</strong>, una UX sólida ayuda a estudiantes y docentes a localizar apuntes, artículos y recursos didácticos de manera ágil, garantizando que el foco de atención se mantenga en el aprendizaje y no en descubrir cómo usar la herramienta.</p>
+
+        <h3 class="subtitulo-wiki">Conceptos clave que debes dominar:</h3>
+        <ul class="lista-conceptos">
+          <li><strong>Usabilidad:</strong> Atributo de calidad que mide qué tan intuitivo y fácil resulta el uso de una interfaz para un usuario común.</li>
+          <li><strong>Accesibilidad:</strong> Diseño inclusivo que asegura que el contenido web sea consumible por todos, incluyendo personas con retos visuales, motores o auditivos (Normativas WCAG).</li>
+          <li><strong>Consistencia:</strong> Uso ordenado del mismo estilo visual, componentes de interfaz y flujos lógicos en todas las páginas para acelerar el aprendizaje del sistema.</li>
+          <li><strong>Retroalimentación (Feedback):</strong> Mecanismo interactivo que informa al usuario en tiempo real cuando una acción ha ocurrido con éxito (ej. barras de progreso, alertas de guardado).</li>
+        </ul>
+
+        <div class="bloque-ejemplo">
+          <strong>Ejemplo real en la Wiki:</strong> Un estudiante de Diseño busca un tema específico en la Wiki UVM de madrugada. Si localiza el contenido en un máximo de tres clics, los enlaces están activos y los botones responden con claridad, su experiencia técnica será exitosa y satisfactoria.
+        </div>
+
+        <div class="contenedor-video-recompensa">
+          <h4>7 - ¿Qué es el Diseño Web? - CONCEPTOS WEB BÁSICOS</h4>
+          <p>Aprende los conceptos básicos para iniciar un proyecto, desde la importancia de elegir bien la tipografía y paleta de colores, hasta su adaptación en diferentes dispositivos.</p>
+          <iframe class="video-wiki" src="https://www.youtube.com/embed/-ut593BSlCk" title="7 - ¿Qué es el Diseño Web? - CONCEPTOS WEB BÁSICOS" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <hr style="border: 0; height: 1px; background: #e2e8f0; margin: 0;">
+
+    <section id="web" class="bloque-espaciado">
+      <div class="wrapper contenido-wiki">
+        <div class="cabecera-seccion">
+          <span class="tag-primario">Módulo 02</span>
+          <h2>Diseño Web Front-End</h2>
+          <p class="intro-p">Aprende a balancear la planeación estructural y el impacto estético para crear sitios web altamente funcionales.</p>
+        </div>
+
+        <h3 class="subtitulo-wiki">¿Qué es el Diseño Web?</h3>
+        <p>El <strong>Diseño Web</strong> consiste en planificar, estructurar, maquetar e implementar la apariencia y la navegación de un sitio web. Va más allá de colocar imágenes estéticas; se trata de una ingeniería de componentes front-end orientada a equilibrar la atracción visual con la velocidad operativa, la semántica del código y la interacción fluida.</p>
+
+        <h3 class="subtitulo-wiki">Elementos principales de la interfaz</h3>
+        <table class="tabla-comparativa">
+          <thead>
+            <tr>
+              <th>Componente</th>
+              <th>Propósito en el Desarrollo Web</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Jerarquía Visual</strong></td>
+              <td>Organiza el tamaño, contraste y posición de elementos para guiar la mirada del usuario de forma orgánica hacia los puntos importantes.</td>
+            </tr>
+            <tr>
+              <td><strong>Tipografía Legible</strong></td>
+              <td>Uso de fuentes responsivas (como Open Sans) optimizadas para lectura prolongada en pantallas, cuidando la altura de línea e interlineado.</td>
+            </tr>
+            <tr>
+              <td><strong>Contraste de Color</strong></td>
+              <td>Uso estratégico de paletas cromáticas institucionales que destaquen textos sobre fondos para evitar la fatiga visual.</td>
+            </tr>
+            <tr>
+              <td><strong>Diseño Adaptable (Responsive)</strong></td>
+              <td>Maquetación mediante flexbox, rejillas o media queries que permite la auto-reconfiguración del layout en smartphones, tablets o PC.</td>
+            </tr>
+            <tr>
+              <td><strong>Optimización Multimedia</strong></td>
+              <td>Compresión de imágenes y streaming eficiente de videos para garantizar velocidades de carga hiperveloces.</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h3 class="subtitulo-wiki">Buenas prácticas para Diseñadores</h3>
+        <p>Al programar tus sitios, utiliza siempre menús claros de navegación, títulos descriptivos y semánticos (H1, H2, H3), imágenes optimizadas en formatos modernos como WebP y una cantidad balanceada de <strong>espacios en blanco (espacio negativo)</strong>. El espacio en blanco permite que el contenido respire y mejora la concentración del estudiante en la lectura.</p>
+
+        <div class="bloque-ejemplo">
+          <strong>Ejemplo real en la Wiki:</strong> Una wiki organizada estrictamente por categorías temáticas limpias permite que los estudiantes de la UVM encuentren las directrices técnicas de sus materias de forma instantánea sin perderse en menús caóticos.
+        </div>
+
+        <div class="contenedor-video-recompensa">
+          <h4>Todo lo que Necesitas saber del Desarrollo Frontend en 19 minutos</h4>
+          <p>Descubre el funcionamiento interno del desarrollo frontend, abarcando cómo los navegadores interpretan el código y el rol fundamental del DOM y los motores de renderizado.</p>
+          <iframe class="video-wiki" src="https://www.youtube.com/embed/Rla0IMxIlNc" title="Todo lo que Necesitas saber del Desarrollo Frontend en 19 minutos" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <hr style="border: 0; height: 1px; background: #e2e8f0; margin: 0;">
+
+    <section id="thinking" class="bloque-espaciado">
+      <div class="wrapper contenido-wiki">
+        <div class="cabecera-seccion">
+          <span class="tag-primario">Módulo 03</span>
+          <h2>Metodología Design Thinking</h2>
+          <p class="intro-p">Aprende el framework de innovación ágil utilizado por los líderes de la industria digital para solucionar problemas complejos.</p>
+        </div>
+
+        <h3 class="subtitulo-wiki">¿Qué es Design Thinking?</h3>
+        <p>El <strong>Design Thinking (Pensamiento de Diseño)</strong> es una metodología de innovación interactiva para resolver problemas complejos poniendo de forma absoluta al usuario en el centro de todo el proceso. Destaca por su naturaleza práctica, cooperativa y empírica, permitiendo que los equipos de diseño descubran necesidades ocultas para generar soluciones de alto impacto.</p>
+
+        <h3 class="subtitulo-wiki">Las 5 Etapas del Ciclo de Innovación</h3>
+        <div class="fases-timeline">
+          <div class="fase-card">
+            <p><span class="fase-numero">Etapa 1</span><strong>Empatizar:</strong> Fase de investigación cualitativa profunda. Consiste en observar, entrevistar y escuchar activamente a los usuarios reales para comprender sus problemas, necesidades latentes y realidades contextuales cotidianas.</p>
+          </div>
+          <div class="fase-card">
+            <p><span class="fase-numero">Etapa 2</span><strong>Definir:</strong> Consiste en filtrar, agrupar y procesar los descubrimientos encontrados en la etapa anterior. El objetivo fundamental es delimitar el problema core a resolver mediante la redacción de un enunciado claro llamado <em>Punto de Vista (POV)</em>.</p>
+          </div>
+          <div class="fase-card">
+            <p><span class="fase-numero">Etapa 3</span><strong>Idear:</strong> Espacio libre enfocado al pensamiento puramente creativo y divergente. El equipo genera un volumen masivo de propuestas disruptivas mediante lluvias de ideas, mapas mentales o dinámicas de dibujo ágil, valorando la cantidad por encima de la viabilidad inicial.</p>
+          </div>
+          <div class="fase-card">
+            <p><span class="fase-numero">Etapa 4</span><strong>Prototipar:</strong> Transformación física y tangible de las mejores ideas conceptuales en modelos económicos de rápida construcción (bocetos, wireframes interactivos en Figma o maquetas de papel) para ver cómo funciona el concepto real.</p>
+          </div>
+          <div class="fase-card">
+            <p><span class="fase-numero">Etapa 5</span><strong>Evaluar (Testear):</strong> Fase de validación en campo. El equipo coloca el prototipo desarrollado directamente en manos de los usuarios para analizar sus reacciones y obtener retroalimentación cualitativa que ayude a corregir o validar la propuesta.</p>
+          </div>
+        </div>
+
+        <div class="bloque-ejemplo">
+          <strong>Aplicación Práctica en la Universidad:</strong> Si los estudiantes de la UVM se quejan de que no entienden la entrega de proyectos, el equipo de diseño escolar usa el Design Thinking: entrevista a los alumnos (Empatiza), delimita que falta claridad en los criterios (Defina), hace una lluvia de ideas de layouts de wikis (Idea), dibuja una propuesta interactiva en papel (Prototipa) y la evalúa con 3 alumnos antes de programarla en código HTML formal (Evalúa).
+        </div>
+
+        <div class="contenedor-video-recompensa">
+          <h4>¿QUÉ ES DESIGN THINKING?</h4>
+          <p>Conoce esta metodología de innovación y repasa sus cinco etapas clave para crear soluciones efectivas centradas totalmente en las necesidades reales de los usuarios.</p>
+          <iframe class="video-wiki" src="https://www.youtube.com/embed/R7TDAu0cbdA" title="¿QUÉ ES DESIGN THINKING?" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <a href="#contenido-principal" class="btn-subir" aria-label="Volver arriba">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </a>
+
+  <footer class="footer-global">
+    <div class="wrapper footer-flex">
+      <a href="index.html" aria-label="Inicio"> 
+        <img src="assets/assetsLOGO2.jpeg" alt="Logo UVM" class="img-footer">
+      </a>
+      <div class="legal-links">
+        <a href="#">Aviso de privacidad</a>
+        <a href="#">Términos de uso</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
